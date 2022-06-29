@@ -1,0 +1,52 @@
+body{
+  background-image: url("../images/baseball-bg.jpg");
+  background-size: cover;
+  width: 100%;
+}
+
+.layout{
+  background-color: rgba(219,219,219,0.2);
+  border-radius: 2%;
+  width: 1000px;
+  height: 1000px;
+  margin: auto;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+h1{
+  text-align: center;
+  color: #dbdbdb;
+}
+
+form{
+  text-align: center;
+}
+
+input[type=text]{
+  width: 100px;
+  height: 25px;
+  border: none;
+  border-bottom: 2px solid;
+  background-color: inherit;
+  text-align: center;
+}
+
+input[type=button]{
+  font-weight: bold;
+  padding: 5px;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+input[type=button]:hover{
+  background-color: skyblue;
+  color: white;
+}
+
+.desc{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 60px 0 30px;
+}

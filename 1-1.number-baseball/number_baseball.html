@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/number_baseball.css">
+</head>
+<body>
+  <div class="layout">
+    <h1>⚾ 숫자 야구 게임 ⚾</h1>
+    <p class="desc">컴퓨터가 생각한 4자리 숫자를 맞춰보세요!</p>
+    <form action="">
+      <input type="text" id="userInputNum" onkeypress="enterkey(event)" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+      <input type="button" value="입력" id="putNum">
+      <br><br>
+      <input type="button" value="컴퓨터 숫자 변경하기" id="randomNum">
+    </form>
+    <div id="score"></div>
+  </div>
+  <script src="js/number_baseball.js"></script>
+</body>
+</html>
