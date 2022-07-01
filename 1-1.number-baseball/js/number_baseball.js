@@ -1,13 +1,16 @@
 let randomNum = document.querySelector("#randomNum");
 let putNum = document.querySelector("#putNum");
+let num = 1;
+let testValue = "";
 changeNum();
 
 randomNum.addEventListener("click", changeNum);
 putNum.addEventListener("click", compareNum);
 
 function changeNum(){
+  num = 1;
   let userInputNum = document.querySelector("#userInputNum");
-  let testValue = Math.floor(Math.random() * 8999 + 1000);
+  testValue = Math.floor(Math.random() * 8999 + 1000);
   let testValueArr = (testValue + '').split('');
   let setTestValueArr = new Set(testValueArr);
 
@@ -59,9 +62,15 @@ function compareNum(){
       }
     }
 
-    score.innerHTML += "<p>" + userInputNum.value + " ---> strike : " + strike + ", ball : " + ball + "</p>";
+    if(num <= 10){
+      score.innerHTML += "<p class='round'>Round " + num + " > " + userInputNum.value + " ---> strike : " + strike + ", ball : " + ball + "</p>";
+      num += 1;
+    } else{
+      alert("10라운드가 종료되었습니다. 정답은 <" + testValue + "> 입니다. \n다시 한 번 플레이 해보세요.\n(창을 닫으면 컴퓨터 숫자는 자동으로 변경됩니다)");
+      changeNum();
+    }
     if(strike == 4){
-      score.innerHTML += "<h3>Congratulation!!</h3>";
+      score.innerHTML += "<h3 class='success'>Congratulation!!</h3>";
       putNum.disabled = true;
     }
     userInputNum.select();
